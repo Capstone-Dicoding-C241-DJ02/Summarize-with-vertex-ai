@@ -4,6 +4,8 @@ A small Flask app that takes a CV as a PDF and returns two things: a short writt
 
 The other parts of the capstone are in the same organization: the cloud functions in [`cv-summarize-func`](https://github.com/Capstone-Dicoding-C241-DJ02/cv-summarize-func) and [`cv-scoring-func`](https://github.com/Capstone-Dicoding-C241-DJ02/cv-scoring-func), the [`backend`](https://github.com/Capstone-Dicoding-C241-DJ02/backend) and the [`web-client`](https://github.com/Capstone-Dicoding-C241-DJ02/web-client).
 
+The code is kept as it was in June 2024. Google retired `text-bison@002` on 9 April 2025, so the parsing step needs a current Vertex AI model before it will run again.
+
 ## What it does
 
 1. **Reads the PDF.** Text is extracted with LangChain's `UnstructuredFileLoader`. If that returns fewer than 500 characters, which is what a scanned CV gives, the pages are rendered to images at 300 dpi with `pypdfium2` and read with Tesseract OCR instead.
